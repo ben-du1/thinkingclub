@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&display=swap');
+
+* {
+  margin:0;
+  padding:0;
+}
+
+.App {
+  padding:25px;
+  font-family:'Cinzel';
+}
+
+a {
+  text-decoration: none;
+  color:inherit;
+}
+
+.Nav {
+  /* padding:10px; */
+  background-color:transparent;
+  display:flex;
+  flex-wrap:nowrap;
+  gap:25px;
+  align-items: baseline;
+}
+
+.Nav a * {
+  vertical-align: bottom;
+}
+
+.Front {
+  display:flex;
+  margin:auto;
+  width:fit-content;
+  padding:50px;
+  align-items: center;
+}
+
+.Visual {
+  max-width:500px;
+  /* border:1px solid black; */
+}
+
+.About {
+  padding:25px;
+  /* border:1px solid black; */
+  max-width:1000px;
+  height:fit-content;
+}
+
+.Join {
+  padding:50px;
+  margin:auto;
+  /* border:1px solid black; */
+}
+
+.Meetings {
+  padding:25px;
+  /* border:1px solid black; */
+}
+.Meeting {
+  border:1px solid black;
+  padding:10px;
+  margin:10px;
+}
+
+.meetingflex {
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.meetingcontent {
+  margin:10px;
+}
+
+.Merch {
+  padding:50px;
+  display:flex;
+  gap:100px;
+  flex-wrap:wrap;
+}
+
+.Product {
+  width:250px;
+  height:250px;
+  border:1px solid black;
+  /* box-shadow: 10px 10px 20px 5px black; */
+  padding:35px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap:10px;
+}
+
+
+.Product img {
+  width:80%;
+  object-fit:contain;
+  max-height:200px;
+  min-height:200px;
+  display: block;
+  margin:auto;
+  border-radius:10px;
+
+}
+
+.Product h3 {
+  width:fit-content;
+  margin:0px auto;
+}
+
+.Console {
+  padding:50px;
+}
