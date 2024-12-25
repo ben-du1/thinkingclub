@@ -1,12 +1,13 @@
 import Meeting from "./Meeting"
 import { useState,useEffect } from "react"
+import SERVER_PATH from "../lib/server"
 
 const Meetings = () => {
     
     const [ meetings, setMeetings ] = useState([]) 
 
     const fetchMeetings = async () => {
-        const response = await fetch('/api/meeting/list')
+        const response = await fetch(SERVER_PATH+'/api/meeting/list')
         const data = await response.json()
         setMeetings(data)
     }

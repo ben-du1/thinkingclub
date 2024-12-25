@@ -1,5 +1,6 @@
 import {useState,useEffect} from 'react'
 import { MdDelete } from "react-icons/md";
+import SERVER_PATH from '../lib/server';
 
 const Console = () => {
 
@@ -27,7 +28,7 @@ const Console = () => {
     }
 
     const fetchMeetings = async () => {
-        const response = await fetch("/api/meeting/list")
+        const response = await fetch(SERVER_PATH+"/api/meeting/list")
         const data = await response.json()
         setMeetings(data)
     }
@@ -37,7 +38,7 @@ const Console = () => {
         const data = meetings[e.currentTarget.id]
 
 
-        const response = await fetch("/api/meeting/delete", {
+        const response = await fetch(SERVER_PATH+"/api/meeting/delete", {
             headers:{
                 'Content-Type':'application/json'
             },

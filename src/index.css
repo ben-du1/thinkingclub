@@ -3,6 +3,7 @@
 * {
   margin:0;
   padding:0;
+  background-color:antiquewhite;
 }
 
 .App {
@@ -24,15 +25,18 @@ a {
   align-items: baseline;
 }
 
+
+.Nav img {
+  width:1.5em;
+}
+
 .Nav a * {
   vertical-align: bottom;
 }
 
 .Front {
   display:flex;
-  margin:auto;
-  width:fit-content;
-  padding:50px;
+  padding-left:50px;
   align-items: center;
 }
 
@@ -42,14 +46,14 @@ a {
 }
 
 .About {
-  padding:25px;
   /* border:1px solid black; */
   max-width:1000px;
   height:fit-content;
 }
 
 .Join {
-  padding:50px;
+  padding-left:50px;
+  padding-bottom:50px;
   margin:auto;
   /* border:1px solid black; */
 }
@@ -112,4 +116,24 @@ a {
 
 .Console {
   padding:50px;
+}
+
+.Help {
+ padding-left:50px;
+  width:fit-content;
+}
+
+.Help img {
+  width:30%;
+}
+
+.Images {
+  margin:auto;
+  padding-left:50px;
+  padding-bottom:50px;
+  /* width:fit-content; */
+}
+
+.Images img {
+  width: 25%;
 }
