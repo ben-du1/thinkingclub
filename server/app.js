@@ -1,9 +1,17 @@
 const express = require('express')
 const bodyParser = require('body-parser')
 const sqlite3 = require('sqlite3').verbose()
-const addMeeting = require(__dirname+'/helpers/addmeeting.js')
-const getMeetings = require(__dirname+'/helpers/getmeetings.js')
-const deleteMeeting = require(__dirname+'/helpers/deletemeeting.js')
+const fs = require('fs')
+const http = require('http')
+const https = require('https')
+const addMeeting = require(__dirname+'/helpers/addMeeting.js')
+const getMeetings = require(__dirname+'/helpers/getMeetings.js')
+const deleteMeeting = require(__dirname+'/helpers/deleteMeeting.js')
+
+var privateKey  = fs.readFileSync('/etc/letsencrypt/live/benjamindu.com/privkey.pem', 'utf8');
+var certificate = fs.readFileSync('/etc/letsencrypt/live/benjamindu.com/fullchain.pem', 'utf8');
+var credentials = {key:privateKey, cert:certificate}
+
 
 const db = new sqlite3.Database('thinkingclub')
 
@@ -35,6 +43,6 @@ app.get('/api/poster',(req,res) => {
     res.download(__dirname+"/thinkingclub.pdf")
 })
 
-app.listen(4000,() => {
-    console.log('thinkingclub v-1 running')
-})
+httpsServer = https.createServer(credentials,app)
+
+httpsServer.listen(4000)
