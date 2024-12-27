@@ -45,10 +45,17 @@ a {
   .Front {
     flex-wrap:wrap;
     flex-direction: column-reverse;
+    padding-bottom:50px;
   }
 
   .Visual {
     width:100%;
+  }
+
+  .Images img {
+    display:block;
+    min-width:250px;
+    max-width:250px;
   }
 
 }
