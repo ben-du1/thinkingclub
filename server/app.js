@@ -8,10 +8,13 @@ const addMeeting = require(__dirname+'/helpers/addMeeting.js')
 const getMeetings = require(__dirname+'/helpers/getMeetings.js')
 const deleteMeeting = require(__dirname+'/helpers/deleteMeeting.js')
 
+const USE_HTTPS = true;
+
+if (USE_HTTPS) {
 var privateKey  = fs.readFileSync('/etc/letsencrypt/live/benjamindu.com/privkey.pem', 'utf8');
 var certificate = fs.readFileSync('/etc/letsencrypt/live/benjamindu.com/fullchain.pem', 'utf8');
 var credentials = {key:privateKey, cert:certificate}
-
+}
 
 const db = new sqlite3.Database('thinkingclub')
 
@@ -43,6 +46,15 @@ app.get('/api/poster',(req,res) => {
     res.download(__dirname+"/thinkingclub.pdf")
 })
 
+
+if (USE_HTTPS) {
 httpsServer = https.createServer(credentials,app)
 
-httpsServer.listen(4000)
+httpsServer.listen(4000,() => {
+    console.log('thinkingclub v1 listening using https')
+})
+} else {
+    app.listen(4000,() => {
+        console.log('thinkingclub v1 listening using http')
+    })
+}

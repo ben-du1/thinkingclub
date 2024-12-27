@@ -25,6 +25,35 @@ a {
   align-items: baseline;
 }
 
+.Nav .icons {
+  display:flex;
+  gap:15px;
+  flex-wrap: nowrap;
+}
+
+@media screen and (max-width: 800px) {
+  .Nav {
+    flex-wrap: wrap;
+    gap:10px;
+    justify-content: center;
+    padding-bottom:25px;
+  }
+  .Nav h1 {
+    font-size:24px;
+  }
+
+  .Front {
+    flex-wrap:wrap;
+    flex-direction: column-reverse;
+  }
+
+  .Visual {
+    width:100%;
+  }
+
+}
+
+
 
 .Nav img {
   width:1.5em;

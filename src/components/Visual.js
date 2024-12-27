@@ -7,14 +7,14 @@ const Visual = () => {
     const refContainer = useRef(null)
     useEffect(() => {
         var scene = new THREE.Scene()
-        var camera = new THREE.PerspectiveCamera(75, 500 / 500, 0.1, 1000);
+        var camera = new THREE.PerspectiveCamera(75, 300 / 300, 0.1, 1000);
         
         var renderer = new THREE.WebGLRenderer({alpha:true});
         const controls = new OrbitControls( camera, renderer.domElement );
-        renderer.setSize(500,500);
+        renderer.setSize(300,300);
         
         refContainer.current && refContainer.current.appendChild( renderer.domElement );
-
+       
         var light = new THREE.PointLight(0xffffff,75, 100)
         light.position.set(0,5,0)
         scene.add(light)
