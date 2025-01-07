@@ -29,6 +29,13 @@ app.use(function(req, res, next) {
     next();
   });
 
+app.get("/privacy",(req,res) => {
+    res.send(```
+    <h1>CCA App Privacy Policy</h1>
+    <p>The CCA App, Canyon Crest Academy Mobile Application, and CCA App Development Club do not collect, store, nor share data of any kind. Email bingzhoudu (at) gmail.com for questions or concerns.</p>
+    ```)
+})
+
 app.post('/api/meeting/add',(req,res) => {
     console.log(req.body)
     addMeeting(db,req.body,res)
