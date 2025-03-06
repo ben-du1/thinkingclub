@@ -12,7 +12,7 @@ const Console = () => {
     const [meetings,setMeetings] = useState([])
 
     const submit = () => {
-        fetch('/api/meeting/add',{
+        fetch(SERVER_PATH+'/api/meeting/add',{
             headers:{
                 'Content-Type':'application/json'
             },
