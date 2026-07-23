@@ -4,4 +4,4 @@
 
 ### Introspect. Contemplate. Ponder.
 
-Check it out at [https://thinking-club.com](https://thinking-club.com)
+Check it out at ~~[https://thinking-club.com](https://thinking-club.com)~~
